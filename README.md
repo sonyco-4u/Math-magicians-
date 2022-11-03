@@ -15,7 +15,7 @@ In this project, I achieved the following
 
 Deploy with Netlify
 
-- [Go Live](https://github.com/sonyco-4u/Math-magicians-.git/)
+- [Go Live]
 
 ## Getting Started
 

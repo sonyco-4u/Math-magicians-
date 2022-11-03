@@ -10,6 +10,7 @@
       "sourceType": "module"
     },
     "extends": ["airbnb-base"],
+    "linebreak-style": ["error", "windows"],
     "rules": {
       "no-shadow": "off",
       "no-param-reassign": "off",
