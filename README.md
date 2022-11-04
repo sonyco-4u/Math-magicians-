@@ -1,23 +1,31 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+# Math-Magicians
 
-# Math Magicians
+In this project, I achieved the following
 
-> In this project I installed and created React App to carryout my math-magicians project-.
+- Created a website consisting of 3 pages: Home, Calculator, and Quote.
+- Used React basic styling.
+- Used React Router to make the routes work.
 
 ## Built With
 
 - React
-- Frameworks
-- Technologies used
+- JavaScript
 
-## Live Demo (if available)
+## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+Deploy with Netlify
+
+- [Go Live]
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+To get a local copy up and running follow these simple example steps.
+
+### Usage
+
+- Clone this repo to your local machine, run git clone and paste the url of the repository
+  `git clone https://github.com/sonyco-4u/Math-magicians-.git` in your command prompt
+- Open the project in your browser run `npm run build` and then run `serve -s build`.
 
 ## Authors
 
