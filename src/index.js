@@ -1,19 +1,11 @@
-/* eslint-disable import/no-unresolved */
-/* eslint-disable no-unused-vars */
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
-import App from './App.js';
-import reportWebVitals from './reportWebVitals.js';
-import './App.css';
+import ReactDOM from 'react-dom/client';
+import Calculator from './components/calculator';
+import './components/styles.css';
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
   <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
+    <Calculator />
   </React.StrictMode>,
-  document.getElementById('root'),
 );
-
-reportWebVitals();

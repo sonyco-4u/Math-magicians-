@@ -1,45 +1,50 @@
-/* eslint-disable import/no-unresolved */
-/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import Screen from './Screen.js';
-import Button from './Button.js';
-import calculate from '../logic/calculate.js';
+import calculate from '../Logic/calculate';
+import './styles.css';
 
 const Calculator = () => {
-  const [total, setTotal] = useState(0);
-  const [next, setNext] = useState(null);
-  const [operation, setOperation] = useState(null);
+  const [count, setCount] = useState({ //count actualiza nuetsro componente y setcount es una funcion que podemos llamar cuando queremos actualizar usestate
+    total: 0,
+    next: null,
+    operation: null,
+  });
 
-  const handleClick = (value) => {
-    const results = calculate({ total, next, operation }, value);
-    setTotal(results.total);
-    setNext(results.next);
-    setOperation(results.operation);
+  const onClickHandler = (e) => {
+    const data = e.target.innerHTML;
+    const result = calculate(count, data);
+    setCount(result);
   };
+
+  const { total, next, operation } = count;
   return (
-    <div id="calculator">
-      <Screen id="display" total={total} next={next} operation={operation} />
-      <Button id="clear" name="AC" handleClick={handleClick} />
-      <Button id="delete" name="+/-" handleClick={handleClick} />
-      <Button id="delete" name="%" handleClick={handleClick} />
-      <Button id="divide" name="÷" handleClick={handleClick} />
-      <Button id="seven" name="7" handleClick={handleClick} />
-      <Button id="eight" name="8" handleClick={handleClick} />
-      <Button id="nine" name="9" handleClick={handleClick} />
-      <Button id="multiply" name="x" handleClick={handleClick} />
-      <Button id="four" name="4" handleClick={handleClick} />
-      <Button id="five" name="5" handleClick={handleClick} />
-      <Button id="six" name="6" handleClick={handleClick} />
-      <Button id="subtract" name="-" handleClick={handleClick} />
-      <Button id="one" name="1" handleClick={handleClick} />
-      <Button id="two" name="2" handleClick={handleClick} />
-      <Button id="three" name="3" handleClick={handleClick} />
-      <Button id="add" name="+" handleClick={handleClick} />
-      <Button id="zero" name="0" handleClick={handleClick} />
-      <Button id="decimal" name="." handleClick={handleClick} />
-      <Button id="equals" name="=" handleClick={handleClick} />
+    <div className="container">
+      <div className="input">
+        {total}
+        {operation}
+        {next}
+      </div>
+      <div className="keypad">
+        <button onClick={onClickHandler} type="button" name="A/C">AC</button>
+        <button onClick={onClickHandler} type="button" name="+/-">+/-</button>
+        <button onClick={onClickHandler} type="button" name="%">%</button>
+        <button onClick={onClickHandler} type="button" id="divide" name="÷">÷</button>
+        <button onClick={onClickHandler} type="button" name="7">7</button>
+        <button onClick={onClickHandler} type="button" name="8">8</button>
+        <button onClick={onClickHandler} type="button" name="9">9</button>
+        <button onClick={onClickHandler} type="button" id="mult" name="*">x</button>
+        <button onClick={onClickHandler} type="button" name="4">4</button>
+        <button onClick={onClickHandler} type="button" name="5">5</button>
+        <button onClick={onClickHandler} type="button" name="6">6</button>
+        <button onClick={onClickHandler} type="button" id="less">-</button>
+        <button onClick={onClickHandler} type="button" name="1">1</button>
+        <button onClick={onClickHandler} type="button" name="2">2</button>
+        <button onClick={onClickHandler} type="button" name="3">3</button>
+        <button onClick={onClickHandler} type="button" id="plus" name="+">+</button>
+        <button onClick={onClickHandler} type="button" name=".">.</button>
+        <button onClick={onClickHandler} type="button" id="equal" name="=">=</button>
+        <button onClick={onClickHandler} type="button" id="cero" name="0" value="0">0</button>
+      </div>
     </div>
   );
 };
-
 export default Calculator;

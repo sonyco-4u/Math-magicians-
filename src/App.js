@@ -1,33 +1,17 @@
-/* eslint-disable class-methods-use-this */
-/* eslint-disable import/no-unresolved */
-/* eslint-disable no-unused-vars */
-import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
-import Navbar from './components/Navbar.js';
-import Home from './pages/Home.js';
-import Mathematics from './pages/Mathematics.js';
-import Quotes from './pages/Quotes.js';
-import Footer from './components/Footer.js';
-import './styles/Calculator.css';
+import React from 'react';
+import Calculator from './components/calculator';
 
-class App extends Component {
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
   render() {
     return (
-      <main className="App">
-        <Navbar />
-        <Switch>
-          <Route path="/quote">
-            <Quotes />
-          </Route>
-          <Route path="/calculator">
-            <Mathematics />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-        <Footer />
-      </main>
+      <div className="App">
+        <Calculator />
+      </div>
     );
   }
 }
