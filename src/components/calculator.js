@@ -1,45 +1,44 @@
-/* eslint-disable import/no-unresolved */
-/* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
-import Screen from './Screen.js';
-import Button from './Button.js';
-import calculate from '../logic/calculate.js';
+import React from 'react';
+import '../calculator.css';
 
-const Calculator = () => {
-  const [total, setTotal] = useState(0);
-  const [next, setNext] = useState(null);
-  const [operation, setOperation] = useState(null);
+class Calculator extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentValue: '0',
+    };
+  }
 
-  const handleClick = (value) => {
-    const results = calculate({ total, next, operation }, value);
-    setTotal(results.total);
-    setNext(results.next);
-    setOperation(results.operation);
-  };
-  return (
-    <div id="calculator">
-      <Screen id="display" total={total} next={next} operation={operation} />
-      <Button id="clear" name="AC" handleClick={handleClick} />
-      <Button id="delete" name="+/-" handleClick={handleClick} />
-      <Button id="delete" name="%" handleClick={handleClick} />
-      <Button id="divide" name="÷" handleClick={handleClick} />
-      <Button id="seven" name="7" handleClick={handleClick} />
-      <Button id="eight" name="8" handleClick={handleClick} />
-      <Button id="nine" name="9" handleClick={handleClick} />
-      <Button id="multiply" name="x" handleClick={handleClick} />
-      <Button id="four" name="4" handleClick={handleClick} />
-      <Button id="five" name="5" handleClick={handleClick} />
-      <Button id="six" name="6" handleClick={handleClick} />
-      <Button id="subtract" name="-" handleClick={handleClick} />
-      <Button id="one" name="1" handleClick={handleClick} />
-      <Button id="two" name="2" handleClick={handleClick} />
-      <Button id="three" name="3" handleClick={handleClick} />
-      <Button id="add" name="+" handleClick={handleClick} />
-      <Button id="zero" name="0" handleClick={handleClick} />
-      <Button id="decimal" name="." handleClick={handleClick} />
-      <Button id="equals" name="=" handleClick={handleClick} />
-    </div>
-  );
-};
+  render() {
+    const { currentValue } = this.state;
+    return (
+
+<div className="calculator">
+<div className="answer">{currentValue}</div>
+<div className="buttons">
+  <button type="button" className="button">AC</button>
+  <button type="button" className="button">+/-</button>
+  <button type="button" className="button">%</button>
+  <button type="button" className="button orange">&divide;</button>
+  <button type="button" className="button">7</button>
+  <button type="button" className="button">8</button>
+  <button type="button" className="button">9</button>
+  <button type="button" className="button orange">&times;</button>
+  <button type="button" className="button">4</button>
+  <button type="button" className="button">5</button>
+  <button type="button" className="button">6</button>
+  <button type="button" className="button orange">-</button>
+  <button type="button" className="button">1</button>
+  <button type="button" className="button">2</button>
+  <button type="button" className="button">3</button>
+  <button type="button" className="button orange">+</button>
+  <button type="button" className="button double-button">0</button>
+  <button type="button" className="button">.</button>
+  <button type="button" className="button orange">=</button>
+</div>
+</div>
+    );
+  }
+}
 
 export default Calculator;
