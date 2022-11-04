@@ -2,9 +2,8 @@
 
 In this project, I achieved the following
 
-- Created a website consisting of 3 pages: Home, Calculator, and Quote.
-- Used React basic styling.
-- Used React Router to make the routes work.
+- used React events to make the Calculator component work.
+- Analyzed the files calculate.js and operate.js.
 
 ## Built With
 
