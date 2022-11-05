@@ -1,50 +1,54 @@
-import React, { useState } from 'react';
-import calculate from '../Logic/calculate';
-import './styles.css';
+import React, { useEffect, useState } from 'react';
+import calculate from '../logic/calculate';
 
 const Calculator = () => {
-  const [count, setCount] = useState({ //count actualiza nuetsro componente y setcount es una funcion que podemos llamar cuando queremos actualizar usestate
-    total: 0,
-    next: null,
-    operation: null,
+  const [state, setState] = useState({
+    total: 0, operation: null, next: null, error: null,
   });
 
-  const onClickHandler = (e) => {
-    const data = e.target.innerHTML;
-    const result = calculate(count, data);
-    setCount(result);
+  const click = (e) => {
+    const result = calculate(state, e.target.textContent);
+    setState(result);
   };
 
-  const { total, next, operation } = count;
+  useEffect(() => {
+    if (state.total !== null && state.total !== undefined) {
+      document.title = `your result is ${state.total}`;
+    }
+  });
+
   return (
     <div className="container">
-      <div className="input">
-        {total}
-        {operation}
-        {next}
-      </div>
-      <div className="keypad">
-        <button onClick={onClickHandler} type="button" name="A/C">AC</button>
-        <button onClick={onClickHandler} type="button" name="+/-">+/-</button>
-        <button onClick={onClickHandler} type="button" name="%">%</button>
-        <button onClick={onClickHandler} type="button" id="divide" name="÷">÷</button>
-        <button onClick={onClickHandler} type="button" name="7">7</button>
-        <button onClick={onClickHandler} type="button" name="8">8</button>
-        <button onClick={onClickHandler} type="button" name="9">9</button>
-        <button onClick={onClickHandler} type="button" id="mult" name="*">x</button>
-        <button onClick={onClickHandler} type="button" name="4">4</button>
-        <button onClick={onClickHandler} type="button" name="5">5</button>
-        <button onClick={onClickHandler} type="button" name="6">6</button>
-        <button onClick={onClickHandler} type="button" id="less">-</button>
-        <button onClick={onClickHandler} type="button" name="1">1</button>
-        <button onClick={onClickHandler} type="button" name="2">2</button>
-        <button onClick={onClickHandler} type="button" name="3">3</button>
-        <button onClick={onClickHandler} type="button" id="plus" name="+">+</button>
-        <button onClick={onClickHandler} type="button" name=".">.</button>
-        <button onClick={onClickHandler} type="button" id="equal" name="=">=</button>
-        <button onClick={onClickHandler} type="button" id="cero" name="0" value="0">0</button>
+      <div className="title">Just MATH it &#10004;</div>
+      <div className="calculator-container">
+        <div className="result">
+          {state.total}
+          {state.operation}
+          {state.next}
+          {state.error}
+        </div>
+        <button type="button" onClick={click}>AC</button>
+        <button type="button" onClick={click}>+/-</button>
+        <button type="button" onClick={click}>%</button>
+        <button type="button" className="last-col" onClick={click}>÷</button>
+        <button type="button" onClick={click}>7</button>
+        <button type="button" onClick={click}>8</button>
+        <button type="button" onClick={click}>9</button>
+        <button type="button" className="last-col" onClick={click}>*</button>
+        <button type="button" onClick={click}>4</button>
+        <button type="button" onClick={click}>5</button>
+        <button type="button" onClick={click}>6</button>
+        <button type="button" className="last-col" onClick={click}>-</button>
+        <button type="button" onClick={click}>1</button>
+        <button type="button" onClick={click}>2</button>
+        <button type="button" onClick={click}>3</button>
+        <button type="button" className="last-col" onClick={click}>+</button>
+        <button type="button" className="zero" onClick={click}>0</button>
+        <button type="button" onClick={click}>.</button>
+        <button type="button" className="last-col" onClick={click}>=</button>
       </div>
     </div>
   );
 };
+
 export default Calculator;
