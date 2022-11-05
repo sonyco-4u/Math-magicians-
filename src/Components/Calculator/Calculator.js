@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import calculate from '../../logic/calculate';
-import './calculator.scss';
+import React, { useState } from "react";
+import calculate from "../../logic/calculate";
+import "./calculator.scss";
 
 const Calculator = () => {
   const [state, setState] = useState({
     total: 0,
-    next: '',
-    operation: '',
+    next: "",
+    operation: "",
   });
 
   const handleClick = (e) => {
