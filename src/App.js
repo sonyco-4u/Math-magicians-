@@ -1,16 +1,15 @@
-import { Component } from 'react';
-import './App.css';
-import Calculator from './Components/Calculator/Calculator';
+import React from 'react';
+import Calculator from './components/calculator';
 
-class App extends Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { };
+    this.state = {};
   }
 
   render() {
     return (
-      <div>
+      <div className="App">
         <Calculator />
       </div>
     );
