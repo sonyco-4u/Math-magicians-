@@ -1,44 +1,50 @@
-import React from 'react';
-import '../calculator.css';
+import React, { useState } from 'react';
+import calculate from '../Logic/calculate';
+import './styles.css';
 
-class Calculator extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentValue: '0',
-    };
-  }
+const Calculator = () => {
+  const [count, setCount] = useState({
+    total: 0,
+    next: null,
+    operation: null,
+  });
 
-  render() {
-    const { currentValue } = this.state;
-    return (
+  const onClickHandler = (e) => {
+    const data = e.target.innerHTML;
+    const result = calculate(count, data);
+    setCount(result);
+  };
 
-<div className="calculator">
-<div className="answer">{currentValue}</div>
-<div className="buttons">
-  <button type="button" className="button">AC</button>
-  <button type="button" className="button">+/-</button>
-  <button type="button" className="button">%</button>
-  <button type="button" className="button orange">&divide;</button>
-  <button type="button" className="button">7</button>
-  <button type="button" className="button">8</button>
-  <button type="button" className="button">9</button>
-  <button type="button" className="button orange">&times;</button>
-  <button type="button" className="button">4</button>
-  <button type="button" className="button">5</button>
-  <button type="button" className="button">6</button>
-  <button type="button" className="button orange">-</button>
-  <button type="button" className="button">1</button>
-  <button type="button" className="button">2</button>
-  <button type="button" className="button">3</button>
-  <button type="button" className="button orange">+</button>
-  <button type="button" className="button double-button">0</button>
-  <button type="button" className="button">.</button>
-  <button type="button" className="button orange">=</button>
-</div>
-</div>
-    );
-  }
-}
-
+  const { total, next, operation } = count;
+  return (
+    <div className="container">
+      <div className="input">
+        {total}
+        {operation}
+        {next}
+      </div>
+      <div className="keypad">
+        <button onClick={onClickHandler} type="button" name="A/C">AC</button>
+        <button onClick={onClickHandler} type="button" name="+/-">+/-</button>
+        <button onClick={onClickHandler} type="button" name="%">%</button>
+        <button onClick={onClickHandler} type="button" id="divide" name="÷">÷</button>
+        <button onClick={onClickHandler} type="button" name="7">7</button>
+        <button onClick={onClickHandler} type="button" name="8">8</button>
+        <button onClick={onClickHandler} type="button" name="9">9</button>
+        <button onClick={onClickHandler} type="button" id="mult" name="*">x</button>
+        <button onClick={onClickHandler} type="button" name="4">4</button>
+        <button onClick={onClickHandler} type="button" name="5">5</button>
+        <button onClick={onClickHandler} type="button" name="6">6</button>
+        <button onClick={onClickHandler} type="button" id="less">-</button>
+        <button onClick={onClickHandler} type="button" name="1">1</button>
+        <button onClick={onClickHandler} type="button" name="2">2</button>
+        <button onClick={onClickHandler} type="button" name="3">3</button>
+        <button onClick={onClickHandler} type="button" id="plus" name="+">+</button>
+        <button onClick={onClickHandler} type="button" name=".">.</button>
+        <button onClick={onClickHandler} type="button" id="equal" name="=">=</button>
+        <button onClick={onClickHandler} type="button" id="cero" name="0" value="0">0</button>
+      </div>
+    </div>
+  );
+};
 export default Calculator;
