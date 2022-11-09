@@ -1,32 +1,36 @@
-# Math-Magicians
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-In this project, I achieved the following
+# Math Magicians
 
-- used React events to make the Calculator component work.
-- Analyzed the files calculate.js and operate.js.
+>
 
 ## Built With
 
 - React
-- JavaScript
-
-## Live Demo
-
-Deploy with Netlify
-
-- [Go Live]
+- Javascript
+- CSS
 
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
 
-### Usage
+### Prerequisites
 
-- Clone this repo to your local machine, run git clone and paste the url of the repository
-  `git clone https://github.com/sonyco-4u/Math-magicians-.git` in your command prompt
-- Open the project in your browser run `npm run build` and then run `serve -s build`.
+- Code Editor
+- Git installed
+- Node js installed
 
-## Authors
+### Setup
+
+- To clone the repository run `git clone https://github.com/sonyco-4u/Math-magicians-.git` in your terminal
+- Next run `npm install` to install dependances
+- To run the project run `npm start` this will open your web browser on localhost:3000
+
+### Run tests
+
+- Run `npm tets` to jest test results
+
+## Author 👤
 
 👤 Ezema Anthony Sunday
 
@@ -48,7 +52,7 @@ Give a ⭐️ if you like this project!
 
 - Hat tip to anyone whose code was used
 - Inspiration
-- effort
+- etc
 
 ## 📝 License
 
