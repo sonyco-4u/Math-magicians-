@@ -10,11 +10,9 @@ In this project, I achieved the following
 - React
 - JavaScript
 
-## Live Demo
+## Live Demo (if available)
 
-Deploy with Netlify
-
-- [Go Live]
+[Live Demo Link] (https://gleaming-genie-7588a3.netlify.app/)
 
 ## Getting Started
 
