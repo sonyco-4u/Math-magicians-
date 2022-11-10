@@ -12,7 +12,7 @@ In this project, I achieved the following
 
 ## Live Demo (if available)
 
-[Live Demo Link]
+[Live Demo Link] (https://gleaming-genie-7588a3.netlify.app/)
 
 ## Getting Started
 
