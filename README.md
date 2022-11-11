@@ -4,11 +4,13 @@ In this project, I achieved the following
 
 - used React events to make the Calculator component work.
 - Analyzed the files calculate.js and operate.js.
+- Created a Test for the App.
 
 ## Built With
 
 - React
 - JavaScript
+- Jest(for testing)
 
 ## Live Demo (if available)
 
@@ -31,6 +33,12 @@ To get a local copy up and running follow these simple example steps.
 - GitHub: [@sonyco-4u](https://github.com/sonyco-4u)
 - Twitter: [@EZEMASUN](https://twitter.com/EZEMASUN)
 - LinkedIn: [ezema-anthony-sunday](https://www.linkedin.com/in/ezema-anthony-sunday-9180a3157)
+
+👤 Lucas Bermudez
+
+- GitHub: [@Oklukeok](https://github.com/Oklukeok)
+- Twitter: [@ok_Lukee](https://twitter.com/ok_Lukee)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 ## 🤝 Contributing
 
