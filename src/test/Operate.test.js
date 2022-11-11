@@ -1,7 +1,7 @@
 /* eslint-disable */
 import renderer from 'react-test-renderer';
 import { BrowserRouter } from 'react-router-dom';
-import operate from '../logic/operate';
+import operate from '../Logic/operate';
 import Header from '../components/nav';
 import Calculator from '../pages/calculator';
 

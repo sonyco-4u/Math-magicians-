@@ -1,6 +1,6 @@
 /* eslint-disable */
 import renderer from 'react-test-renderer';
-import Operate from '../logic/operate';
+import Operate from '../Logic/operate';
 import Calculator from '../pages/calculator';
 
 test('Render Calculator', () => {
