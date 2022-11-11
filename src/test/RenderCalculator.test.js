@@ -9,6 +9,6 @@ test('Render Calculator', () => {
 });
 
 test('Multiply 1 x 2 result will be 2', () => {
-  const result = operate(1, 2, 'x');
+  const result = Operate(1, 2, 'x');
   expect(result).toBe('2');
 });
